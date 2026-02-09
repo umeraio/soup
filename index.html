@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immune Soup Video Recipe - اردو اور انگریزی</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Enhanced styles for a modern, medicinal theme */
+        :root {
+            --primary-color: #991b1b; /* Deep Red/Ginseng color */
+            --secondary-color: #fbbf24; /* Turmeric/Ginger gold */
+            --background-color: #fef9e7; /* Light creamy background */
+            --text-color: #1e3a8a; /* Dark blue for contrast */
+            --accent-color: #059669; /* Healing green */
+            --hover-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--background-color);
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Enhanced Card Animations */
+        .step-card {
+            background-color: white;
+            transition: var(--hover-transition);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: var(--hover-transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-card:hover::before {
+            transform: translateX(100%);
+        }
+        /* Enhanced Typography and Headers */
+        .section-header {
+            border-bottom: 4px solid var(--secondary-color);
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 40%;
+            height: 4px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .section-header:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Enhanced List Items */
+        .list-item {
+            border-left: 4px solid var(--primary-color);
+            transition: var(--hover-transition);
+            animation: fadeInUp 0.5s ease backwards;
+        }
+
+        .list-item:hover {
+            border-left-color: var(--accent-color);
+            background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0.5));
+            transform: translateX(5px);
+        }
+
+        /* Enhanced CTA Button */
+        .cta-button {
+            background-color: var(--primary-color);
+            box-shadow: 0 4px #7f1d1d;
+            transition: var(--hover-transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: var(--hover-transition);
+        }
+
+        .cta-button:hover::before {
+            transform: translateX(100%);
+        }
+        .cta-button:active {
+            box-shadow: 0 2px #7f1d1d;
+            transform: translateY(2px);
+        }
+        /* Enhanced Urdu text styling */
+        .urdu-text {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+            line-height: 1.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Enhanced text readability */
+        h1, h2, h3 {
+            letter-spacing: -0.025em;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .text-lg {
+            letter-spacing: -0.01em;
+        }
+
+        /* Icons enhancement */
+        .icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            margin-right: 1rem;
+            transition: var(--hover-transition);
+        }
+
+        .icon-wrapper:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .icon-text {
+            font-size: 1.5rem;
+            color: white;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div id="app" class="max-w-4xl mx-auto rounded-xl p-6 md:p-10 step-card">
+        
+        <!-- Video Header Section -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold section-header inline-block px-4 pb-2 mb-3">
+                The Super Immune Soup by Umer Malik <br><span class="text-3xl urdu-text" lang="ur">عمر ملک کا سپر مدافعتی سوپ</span>
+            </h1>
+            <p class="text-xl text-gray-700">A powerful cold &amp; flu tonic with Ginseng, Ginger, and Turmeric.</p>
+            <p class="text-lg text-gray-700 urdu-text" lang="ur">جینسینگ، ادرک اور ہلدی کے ساتھ نزلہ و زکام کا ایک طاقتور ٹانک۔</p>
+        </header>
+
+        <!-- Ingredients Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 section-header">
+                1. Gather Your Boosters <span class="urdu-text text-2xl" lang="ur"> (طاقت بڑھانے والی چیزیں جمع کریں)</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <div id="ingredients-list" class="col-span-1 md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Ingredients will be injected here by the script below -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Steps Section (Simulating Video Clips) -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                2. The Cooking Process <span class="urdu-text text-2xl" lang="ur"> (کھانا پکانے کا عمل)</span>
+            </h2>
+            
+            <div id="steps-container" class="space-y-6">
+                <!-- Step 1 -->
+                <div class="step-card p-5 rounded-xl border-l-4 border-red-800">
+                    <h3 class="font-extrabold text-2xl text-red-800 mb-4">Step 1: Prep & Load the Pot <span class="urdu-text text-xl" lang="ur"> (مرحلہ 1: تیاری اور برتن میں ڈالیں)</span></h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+                        <li>Rinse the <strong>Half Lamb Neck</strong> thoroughly</li>
+                        <li>Place it in a large stockpot</li>
+                        <li>Add <strong>2.5 Liters</strong> of cold water</li>
+                        <li>Ensure the lamb is fully covered with water</li>
+                    </ul>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700 urdu-text" dir="rtl" lang="ur">
+                        <li><strong>آدھی دنبے کی گردن کو اچھی طرح دھوئیں</strong></li>
+                        <li><strong>اسے ایک بڑے برتن میں ڈالیں</strong></li>
+                        <li><strong>2.5 لیٹر ٹھنڈا پانی شامل کریں</strong></li>
+                        <li><strong>یقینی بنائیں کہ گوشت پانی میں مکمل ڈوبا ہوا ہے</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card p-5 rounded-xl border-l-4 border-red-800">
+                    <h3 class="font-extrabold text-2xl text-red-800 mb-4">Step 2: Aromatic Smash <span class="urdu-text text-xl" lang="ur"> (مرحلہ 2: خوشبودار چیزوں کو کوٹنا)</span></h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+                        <li>Add <strong>1 whole Red Onion</strong> (no need to chop)</li>
+                        <li>Take <strong>1 whole head of Garlic</strong> and lightly smash it (keep the skin on)</li>
+                        <li>Slice the <strong>Turmeric</strong> into thin rounds</li>
+                        <li>Cut the <strong>Ginger</strong> into thick slices</li>
+                        <li>Add all aromatics to the pot</li>
+                    </ul>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700 urdu-text" dir="rtl" lang="ur">
+                        <li><strong>1 پوری سرخ پیاز شامل کریں (کاٹنے کی ضرورت نہیں)</strong></li>
+                        <li><strong>لہسن کا 1 ثابت ٹکڑا لیں اور اسے ہلکا سا کچل دیں (چھلکا لگا رہنے دیں)</strong></li>
+                        <li><strong>ہلدی کو پتلے گول ٹکڑوں میں کاٹیں</strong></li>
+                        <li><strong>ادرک کو موٹے ٹکڑوں میں کاٹیں</strong></li>
+                        <li><strong>تمام خوشبودار چیزیں برتن میں ڈال دیں</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card p-5 rounded-xl border-l-4 border-red-800">
+                    <h3 class="font-extrabold text-2xl text-red-800 mb-4">Step 3: Spice Infusion <span class="urdu-text text-xl" lang="ur"> (مرحلہ 3: مسالوں کا عرق نکالنا)</span></h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+                        <li>Add <strong>3 Cinnamon Sticks</strong></li>
+                        <li>Add <strong>1 small spoon Black Pepper</strong> (whole)</li>
+                        <li>Add <strong>1 small spoon Kalwangi</strong> (Nigella Seeds)</li>
+                        <li>Add <strong>Ginseng</strong> (either 3 inches of raw root OR 1 small spoon of extract)</li>
+                        <li>Place pot on high heat until rolling boil</li>
+                    </ul>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700 urdu-text" dir="rtl" lang="ur">
+                        <li><strong>3 دار چینی کی لکڑیاں شامل کریں</strong></li>
+                        <li><strong>1 چھوٹا چمچ کالی مرچ (سابت) شامل کریں</strong></li>
+                        <li><strong>1 چھوٹا چمچ کلونجی شامل کریں</strong></li>
+                        <li><strong>جینسینگ شامل کریں (3 انچ کی تازہ جڑ یا 1 چھوٹا چمچ عرق)</strong></li>
+                        <li><strong>برتن کو تیز آنچ پر رکھیں تاکہ ابال آ جائے</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card p-5 rounded-xl border-l-4 border-red-800 bg-yellow-50">
+                    <h3 class="font-extrabold text-2xl text-red-800 mb-4">Step 4: The Deep Reduction (Critical) <span class="urdu-text text-xl" lang="ur"> (مرحلہ 4: گہری کمی (اہم))</span></h3>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-800 font-semibold mb-4">
+                        <li>Once boiling, <strong>immediately reduce heat to low</strong></li>
+                        <li>Cover the pot partially</li>
+                        <li>Simmer for a <span class="text-primary-color">minimum of 1 hour</span></li>
+                        <li>Reduce liquid by <strong>50%</strong> (to 1.25 Liters)</li>
+                        <li>Watch for rich, concentrated color</li>
+                    </ul>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-800 font-semibold urdu-text" dir="rtl" lang="ur">
+                        <li>ابال آنے کے فوراً بعد آنچ کو ہلکا کر دیں</li>
+                        <li>برتن کو جزوی طور پر ڈھانپ دیں</li>
+                        <li>کم از کم 1 گھنٹہ تک پکائیں</li>
+                        <li>مائع کو 50 فیصد (1.25 لیٹر تک) کم کریں</li>
+                        <li>گہرے، مرتکز رنگ کا خیال رکھیں</li>
+                    </ul>
+                    <p class="mt-4 text-red-800 font-bold">💡 Note: This reduction step concentrates the healing properties!</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="step-card p-5 rounded-xl border-l-4 border-red-800">
+                    <h3 class="font-extrabold text-2xl text-red-800 mb-2">Step 5: Strain & Serve <span class="urdu-text text-xl" lang="ur"> (مرحلہ 5: چھانیں اور پیش کریں)</span></h3>
+                    <p class="text-gray-700">Turn off the heat. Carefully strain the rich broth through a fine-mesh sieve to remove all the solids and spices. Ladle the concentrated broth into a mug and sip it warm. Season with a pinch of salt to taste, if needed.</p>
+                    <p class="text-gray-700 urdu-text" lang="ur">آنچ بند کر دیں۔ تمام ٹھوس اجزاء اور مسالوں کو ہٹانے کے لیے بھرپور یخنی کو احتیاط سے باریک چھلنی سے چھان لیں۔ مرتکز یخنی کو مگ میں نکالیں اور گرم گرم پیئیں۔ اگر ضرورت ہو تو، ذائقہ کے لیے چٹکی بھر نمک ڈالیں۔</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action / Next Steps -->
+        <footer class="text-center mt-12 pt-6 border-t border-gray-300">
+            <p class="text-xl text-gray-700 mb-4">You've successfully brewed a potent tonic!</p>
+            <p class="text-xl text-gray-700 mb-4 urdu-text" lang="ur">آپ نے کامیابی سے ایک طاقتور ٹانک تیار کر لیا ہے!</p>
+            <button class="cta-button text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300">
+                Start Cooking Now! <span class="urdu-text inline-block" lang="ur"> (ابھی پکانا شروع کریں!)</span>
+            </button>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPT MOVED HERE FOR CORRECT DOM LOADING -->
+    <script>
+        const ingredients = [
+            { item: "Water", urduItem: "پانی", quantity: "2.5 Liters", icon: "💧" },
+            { item: "Half Lamb Neck", urduItem: "آدھی دنبے کی گردن", quantity: "Rich Base", icon: "🍖" },
+            { item: "Red Onion", urduItem: "سرخ پیاز", quantity: "1 whole", icon: "🧅" },
+            { item: "Garlic (Smashed)", urduItem: "لہسن (کُٹا ہوا)", quantity: "1 whole piece (bulb)", icon: "🧄" },
+            { item: "Fresh Turmeric", urduItem: "تازہ ہلدی", quantity: "1 inch in size", icon: "🟠" },
+            { item: "Ginger (Smashed)", urduItem: "ادرک (کُٹا ہوا)", quantity: "1 strip (1-2 inch thick)", icon: "🫚" },
+            { item: "Cinnamon Sticks", urduItem: "دار چینی کی لکڑیاں", quantity: "3 whole sticks", icon: "🪵" },
+            { item: "Kalwangi (Nigella Seeds)", urduItem: "کلونجی", quantity: "1 teaspoon", icon: "⚫" },
+            { item: "Black Pepper", urduItem: "کالی مرچ", quantity: "1 small spoon (whole)", icon: "🧂" },
+            { item: "Ginseng", urduItem: "جینسینگ", quantity: "Small piece/slices", icon: "🌱" }
+        ];
+
+        const ingredientsList = document.getElementById('ingredients-list');
+        // Check if the element exists before trying to populate it
+        if (ingredientsList) {
+            ingredients.forEach(ing => {
+                const div = document.createElement('div');
+                div.className = 'list-item p-4 rounded-lg flex items-center bg-gray-50';
+                div.innerHTML = `
+                    <div class="icon-wrapper">
+                        <span class="icon-text">${ing.icon}</span>
+                    </div>
+                    <div class="flex-grow">
+                        <p class="font-semibold text-lg text-red-800 mb-1 transition-colors duration-300 hover:text-red-700">${ing.item}</p>
+                        <p class="text-lg font-semibold text-red-800 urdu-text mb-1" lang="ur">${ing.urduItem}</p>
+                        <p class="text-sm text-gray-600 opacity-90">${ing.quantity}</p>
+                    </div>
+                `;
+                ingredientsList.appendChild(div);
+            });
+        }
+    </script>
+</body>
+</html>
